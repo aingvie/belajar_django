@@ -1,0 +1,46 @@
+{% extends 'back/base.html' %}
+
+{% block content  %}
+<div class="content">
+	            <div class="container-fluid">
+	                <div class="row">
+	                    <div class="col-md-12">
+	                        <div class="card">
+								<form class="form-horizontal" method="POST">
+                                {% csrf_token %}
+		                            <div class="card-header">
+										<h4 class="card-title">
+											{{title}}
+										</h4>
+									</div>
+		                            <div class="card-content">
+                                        <div class="form-group">
+		                                    <label class="col-md-3 control-label">Judul</label>
+		                                    <div class="col-md-9">
+		                                        <input name="judul" type="text" placeholder="Judul Artikel" class="form-control" value="{{artikel.judul}}">
+		                                    </div>
+		                                </div>
+
+                                        <div class="form-group">
+		                                    <label class="col-md-3 control-label">Body</label>
+		                                    <div class="col-md-9">
+                                            <textarea name="body" id="" cols="30" rows="10" class="form-control" placeholder="Isi Berita">{{artikel.body}}</textarea>
+		                                    </div>
+		                                </div>
+									<div class="card-footer text-center">
+										<div class="form-group">
+											<label class="col-md-3"></label>
+											<div class="col-md-9">
+												<button type="submit" class="btn btn-fill btn-info">
+													Submit
+												</button>
+											</div>
+										</div>
+									</div>
+								</form>
+	                    	</div> <!-- end card -->
+	                	</div> <!--  end col-md-6  -->
+	                </div> <!-- end row -->
+	            </div>
+	    	</div>
+{% endblock  %}
