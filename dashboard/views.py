@@ -40,15 +40,15 @@ def dashboard(request):
 def artikel(request):
     templates_name ="back/tabelArtikel.html"
     Artikel = artikelz.objects.filter(nama = request.user)
-    url = 'http://localhost:8000/dashboard/api/artikel/list/682562fa6e59d7f017e536dde51c9a2d3a1af4a33fdab956b4769ae2ee3594dd'
-    user_login ="revie"
-    user_password ="raden210801"
-    x = requests.get(url, auth=(user_login, user_password))
-    if x.status_code == 200:
-     print('request berhasil')
-     data = x.json()['rows']
-     for d in data:
-         print(d['judul'])
+    #url = 'http://localhost:8000/dashboard/api/artikel/list/682562fa6e59d7f017e536dde51c9a2d3a1af4a33fdab956b4769ae2ee3594dd'
+    #user_login ="revie"
+    #user_password ="raden210801"
+    #x = requests.get(url, auth=(user_login, user_password))
+    #if x.status_code == 200:
+    # print('request berhasil')
+    # data = x.json()['rows']
+    # for d in data:
+    #     print(d['judul'])
     context = {
         'title':'tabel artikel',
         'artikel' : Artikel,
